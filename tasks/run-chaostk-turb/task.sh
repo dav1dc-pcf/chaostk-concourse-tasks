@@ -3,6 +3,8 @@
 # DEBUG
 set -x
 
+whoami
+
 # DO IT!
 chaos run ${CHAOSTK_CMD_FLAGS} ${EXPERIMENT_FILE}
 
