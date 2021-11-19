@@ -1,6 +1,8 @@
 ---
 platform: linux
 
+privileged: true
+
 image_resource:
   type: docker-image
   source:
