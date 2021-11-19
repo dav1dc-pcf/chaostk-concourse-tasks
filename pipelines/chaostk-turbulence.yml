@@ -5,7 +5,7 @@ resources:
   type: git
   source:
     uri: https://github.com/dav1dc-pcf/chaostk-experiments.git
-    branch: main
+    branch: master
     submodules: all
     depth: 1
 - name: chaostk-tasks
