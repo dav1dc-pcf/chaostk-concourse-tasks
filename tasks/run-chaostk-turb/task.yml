@@ -1,0 +1,64 @@
+---
+platform: linux
+
+inputs:
+- name: experiments
+- name: chaostk-tasks
+
+params:
+  TURBULENCE_URL: https://turbulence:PASSWORD@1.2.3.4:8080
+  # - Required
+  # - URL to the Turbulence API Server
+
+  EXPERIMENT_FILE: experiments/turbulence/kill_vm_random_job.json
+  # - Required
+  # - Which Experiment file to run?
+
+  CHAOSTK_CMD_FLAGS: "--no-verify-tls --rollback-strategy always"
+
+  SITE_TO_TEST: "https://www.google.com"
+  # - Required
+  # - Which URL to test as part of the steady state hypothesis?
+
+  DEPLOYMENT_NAME: cf-abcdef1234567
+  # - Required
+  # - Name of the BOSH deployment to act on
+
+  JOB_NAME: router
+  # - Required
+  # - VM Type to act in the ${DEPLOYMENT_NAME}
+
+  LIMIT: 1
+  # - Required
+  # - Limit the impact of the experiment to ${LIMIT} number of ${JOB_NAME} VM's in the ${DEPLOYMENT_NAME} deployment
+
+  NET_TIMEOUT: "5m"
+  # - Optional
+  # - How long to run stress tests on systems before automatically rolling back/turning off the stress
+
+  AZ_NAME_TO_DELETE: "AZ1"
+  # - Optional
+  # - For the kill_vm_entire_az experiment, which AZ should be killed?
+
+  NET_LOSS_CORR: "75%" 
+  NET_LOSS: "5%"
+  NET_DELAY_VAR: "25ms"
+  NET_DELAY: "200ms"
+  # - Optional
+  # - for the network_add_random_delay experiment - tune these for more/less network interference
+
+  PROCESS_NAME_TO_KILL: "gorouter"
+  # - Optional
+  # - for the killprocess_random_job experiment - which monit process do we want to kill?
+
+  STRESS_RAM_NUM_WORKERS: 1
+  STRESS_RAM_NUM_BYTES: "50K"
+  STRESS_IO_NUM_WORKERS: 1
+  STRESS_HDD_NUM_WORKERS: 1
+  STRESS_HDD_NUM_BYTES: "1M"
+  STRESS_CPU_NUM_WORKERS: 2
+  # - Optional
+  # - for the stress_* experiments - tune these for more/less system load
+
+run:
+  path: chaostk-tasks/tasks/run-chaostk-turb/task.sh
