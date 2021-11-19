@@ -30,7 +30,7 @@ jobs:
     params:
       TURBULENCE_URL: ((turbulence_url))
       SITE_TO_TEST: ((site_to_test))
-      DEPLOYMENT_NAME: 
+      DEPLOYMENT_NAME: ((deployment_name))
       JOB_NAME: ((job_name))
       LIMIT: ((limit))
       NET_TIMEOUT: ((net_timeout))
