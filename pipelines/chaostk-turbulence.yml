@@ -25,7 +25,6 @@ jobs:
     - get: experiments
     - get: chaostk-tasks
   - task: run-chaostk-experiment-turbulence
-    image: dav1dc/chaostk-tanzu:0.0.2
     file: chaostk-tasks/tasks/run-chaostk-turb/task.yml
     params:
       TURBULENCE_URL: ((turbulence_url))
