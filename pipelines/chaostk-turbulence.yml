@@ -34,3 +34,5 @@ jobs:
       JOB_NAME: ((job_name))
       LIMIT: ((limit))
       NET_TIMEOUT: ((net_timeout))
+      EXPERIMENT_FILE: ((experiment_file))
+      CHAOSTK_CMD_FLAGS: ((chaostk_cmd_flags))
