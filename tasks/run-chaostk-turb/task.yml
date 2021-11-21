@@ -4,7 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: dav1dc/chaostk-tanzu
+    repository: harbor.haas-459.pez.vmware.com/ci/chaostk-tanzu
     tag: "0.0.2"
     privileged: true
 
