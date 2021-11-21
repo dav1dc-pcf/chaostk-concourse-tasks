@@ -1,0 +1,25 @@
+---
+
+resources:
+- name: chaostk-tasks
+  type: git
+  source:
+    uri: https://github.com/dav1dc-pcf/chaostk-concourse-tasks.git
+    branch: main
+    submodules: all
+    depth: 1
+
+jobs:
+- name: run-k6-loadtest
+  serial: true
+  serial_groups: [ runk6 ]
+  plan:
+  - in_parallel:
+    - get: chaostk-tasks
+  - task: run-k6-load-test
+    file: chaostk-tasks/tasks/run-k6/task.yml
+    params:
+      SITE_TO_TEST: ((site_to_test))
+      VIRTUAL_USERS: ((virtual_users))
+      REQUEST_COUNT: ((request_count))
+      TEST_DURATION_LIMIT: ((test_duration_time))

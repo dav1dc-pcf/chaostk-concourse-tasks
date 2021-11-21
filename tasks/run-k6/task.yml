@@ -1,0 +1,29 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: harbor.haas-459.pez.vmware.com/ci/chaostk-tanzu
+    tag: "0.0.2"
+
+inputs:
+- name: chaostk-tasks
+
+params:
+  SITE_TO_TEST: "https://www.google.com"
+  # - Required
+  # - Which URL are we hitting with the k6 load test?
+
+  VIRTUAL_USERS: 1
+  # - Required
+  # - How many Virtual users to run the k6 command with?
+
+  REQUEST_COUNT: 100
+  # - Required
+  # - How many requests to make to ${SITE_TO_TEST} using k6?
+  # - Note that this number will be evenly distributed over ${VIRTUAL_USERS}
+
+  TEST_DURATION_LIMIT: "10m"
+  # - Required
+  # - Maximum time limt of load test (end after ${TEST_DURATION_LIMIT}, even if we haven't reached ${REQUEST_COUNT})

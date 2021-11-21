@@ -1,0 +1,4 @@
+site_to_test: "https://spring-music-surprised-quoll-on.cfapps.haas-459.pez.vmware.com"
+virtual_users: 2
+request_count: 1000
+test_duration_time: "10m"
