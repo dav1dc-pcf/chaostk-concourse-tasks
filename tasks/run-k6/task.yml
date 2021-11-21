@@ -27,3 +27,6 @@ params:
   TEST_DURATION_LIMIT: "10m"
   # - Required
   # - Maximum time limt of load test (end after ${TEST_DURATION_LIMIT}, even if we haven't reached ${REQUEST_COUNT})
+
+run:
+  path: chaostk-tasks/tasks/run-k6/task.sh
