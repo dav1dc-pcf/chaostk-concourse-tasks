@@ -2,7 +2,6 @@
 
 # DEBUG
 set -x
-whoami
 
 # Ensure some Py variables are present
 export LC_ALL=C.UTF-8
