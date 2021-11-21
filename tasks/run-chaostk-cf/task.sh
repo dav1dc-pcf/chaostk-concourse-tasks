@@ -12,6 +12,8 @@ export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 chaos run ${CHAOSTK_CMD_FLAGS} ${EXPERIMENT_FILE}
 
 # CAT expierment log file for posterity sake
+echo
+echo
 cat chaostoolkit.log
 
 # FIN
