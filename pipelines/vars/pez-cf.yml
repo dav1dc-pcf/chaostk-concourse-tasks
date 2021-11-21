@@ -1,0 +1,9 @@
+site_to_test: "https://spring-music-surprised-quoll-on.cfapps.haas-459.pez.vmware.com"
+experiment_file: "experiments/cf/stop-cf-app.json"
+chaostk_cmd_flags: "--no-verify-tls --rollback-strategy always"
+cf_api_url: "https://api."
+cf_username: ((cf_admin_user.username))
+cf_password: ((cf_admin_user.password))
+cf_org: "demos"
+cf_space: "demo-apps"
+cf_app_name: "spring-music"
