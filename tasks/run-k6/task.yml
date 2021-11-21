@@ -15,6 +15,10 @@ params:
   # - Required
   # - Which URL are we hitting with the k6 load test?
 
+  K6_CMD_LINE_ARGS: "--insecure-skip-tls-verify"
+  # - Required
+  # - any additional command line arguements required to make k6 work as desired
+
   VIRTUAL_USERS: 1
   # - Required
   # - How many Virtual users to run the k6 command with?

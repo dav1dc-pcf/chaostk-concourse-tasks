@@ -23,3 +23,4 @@ jobs:
       VIRTUAL_USERS: ((virtual_users))
       REQUEST_COUNT: ((request_count))
       TEST_DURATION_LIMIT: ((test_duration_time))
+      K6_CMD_LINE_ARGS: ((k6_cmd_line_args))
