@@ -1,0 +1,59 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: harbor.haas-459.pez.vmware.com/ci/chaostk-tanzu
+    tag: "0.0.2"
+
+inputs:
+- name: experiments
+- name: chaostk-tasks
+
+params:
+  TURBULENCE_URL: https://turbulence:PASSWORD@1.2.3.4:8080
+  # - Required
+  # - URL to the Turbulence API Server
+
+  EXPERIMENT_FILE: experiments/cf/stop-cf-app.json
+  # - Required
+  # - Which Experiment file to run? 
+  # - (must use CF Driver for ChaosTK, under experiments/cf/* typically)
+
+  CHAOSTK_CMD_FLAGS: "--no-verify-tls --rollback-strategy always"
+  # - Required
+  # - Command line arguements to use with "chaos run"
+
+  SITE_TO_TEST: "https://www.google.com"
+  # - Required
+  # - Which URL to test as part of the steady state hypothesis?
+
+  CF_API_URL: "https://api.sys.your-tas-install.com"
+  # - Required
+  # - Where is the CAPI end-point for CF?
+
+  CF_USERNAME: "username"
+  # - Required
+  # - The CF username to login to CAPI with 
+  # - (should be stored in Credhub!)
+
+  CF_PASSWORD: "password"
+  # - Required
+  # - The CF password to login to CAPI with 
+  # - (should be stored in Credhub!)
+
+  CF_ORG: "demos"
+  # - Required
+  # - The CF ORG where the application we want to target resides
+
+  CF_SPACE: "demo-apps"
+  # - Required
+  # - The CF SPACE where the application we want to target resides
+
+  CF_APP_NAME: "spring-music"
+  # - Required
+  # - The CF Application Name that we want to target resides
+
+run:
+  path: chaostk-tasks/tasks/run-chaostk-cf/task.sh

@@ -6,7 +6,6 @@ image_resource:
   source:
     repository: harbor.haas-459.pez.vmware.com/ci/chaostk-tanzu
     tag: "0.0.2"
-    privileged: true
 
 inputs:
 - name: experiments
@@ -20,6 +19,7 @@ params:
   EXPERIMENT_FILE: experiments/turbulence/kill_vm_random_job.json
   # - Required
   # - Which Experiment file to run?
+  # - (must use Turbulence Driver for ChaosTK, under experiments/turbulence/* typically)
 
   CHAOSTK_CMD_FLAGS: "--no-verify-tls --rollback-strategy always"
   # - Required
