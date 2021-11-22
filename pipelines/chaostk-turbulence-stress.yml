@@ -1,0 +1,43 @@
+---
+
+resources:
+- name: experiments
+  type: git
+  source:
+    uri: https://github.com/dav1dc-pcf/chaostk-experiments.git
+    branch: master
+    submodules: all
+    depth: 1
+- name: chaostk-tasks
+  type: git
+  source:
+    uri: https://github.com/dav1dc-pcf/chaostk-concourse-tasks.git
+    branch: main
+    submodules: all
+    depth: 1
+
+jobs:
+- name: run-chaostk-turb-experiment
+  serial: true
+  serial_groups: [ runchaostk ]
+  plan:
+  - in_parallel:
+    - get: experiments
+    - get: chaostk-tasks
+  - task: run-chaostk-experiment-turbulence
+    file: chaostk-tasks/tasks/run-chaostk-turb/task.yml
+    params:
+      TURBULENCE_URL: ((turbulence_url))
+      SITE_TO_TEST: ((site_to_test))
+      DEPLOYMENT_NAME: ((deployment_name))
+      JOB_NAME: ((job_name))
+      LIMIT: ((limit))
+      NET_TIMEOUT: ((net_timeout))
+      EXPERIMENT_FILE: ((experiment_file))
+      CHAOSTK_CMD_FLAGS: ((chaostk_cmd_flags))
+      STRESS_RAM_NUM_WORKERS: ((stress_ram_num_workers))
+      STRESS_RAM_NUM_BYTES: ((stress_ram_num_bytes))
+      STRESS_IO_NUM_WORKERS: ((stress_io_num_workers))
+      STRESS_HDD_NUM_WORKERS: ((stress_hdd_num_workers))
+      STRESS_HDD_NUM_BYTES: ((stress_hdd_num_bytes))
+      STRESS_CPU_NUM_WORKERS: ((stress_cpu_num_workers))
