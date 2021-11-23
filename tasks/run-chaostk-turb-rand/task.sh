@@ -19,8 +19,8 @@ echo "Selected the following random values:"
 echo "JOB_NAME=" ${JOB_NAME}
 echo "LIMIT=" ${LIMIT}
 echo
-echo "Sleeping for 10 seconds in case you want to abort this selection..."
-sleep 5
+echo "Sleeping for 15 seconds in case you want to abort this selection..."
+sleep 15
 
 # DO IT!
 chaos run ${CHAOSTK_CMD_FLAGS} ${EXPERIMENT_FILE}
