@@ -1,0 +1,7 @@
+experiment_file: "experiments/turbulence/kill_vm_random_job.json"
+chaostk_cmd_flags: "--no-verify-tls"
+site_to_test: "https://spring-music-surprised-quoll-on.cfapps.haas-459.pez.vmware.com"
+deployment_name: "cf-5615f893f295dc4e58b0"
+net_timeout: "5m"
+random_job_name_arr: '["backup_restore", "clock_global", "cloud_controller", "cloud_controller_worker", "credhub", "diego_brain", "diego_cell", "diego_database", "doppler", "loggregator_trafficcontroller", "mysql", "mysql_monitor", "mysql_proxy", "nats", "nfs_server", "router", "tcp_router", "uaa"]'
+random_limit_range: 2
