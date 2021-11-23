@@ -1,0 +1,7 @@
+experiment_file: "experiments/turbulence/kill_vm_random_job.json"
+chaostk_cmd_flags: "--no-verify-tls"
+site_to_test: "https://spring-music-surprised-quoll-on.cfapps.haas-459.pez.vmware.com"
+deployment_name: "cf-5615f893f295dc4e58b0"
+job_name: "diego_cell"
+limit: "1"
+net_timeout: "5m"

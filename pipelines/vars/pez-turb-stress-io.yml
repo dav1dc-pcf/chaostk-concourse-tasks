@@ -1,0 +1,13 @@
+experiment_file: "experiments/turbulence/stress_io_random_job.json"
+chaostk_cmd_flags: "--no-verify-tls"
+site_to_test: "https://spring-music-surprised-quoll-on.cfapps.haas-459.pez.vmware.com"
+deployment_name: "cf-5615f893f295dc4e58b0"
+job_name: "router"
+limit: "4"
+net_timeout: "5m"
+stress_ram_num_workers: 1
+stress_ram_num_bytes: "50K"
+stress_io_num_workers: 1
+stress_hdd_num_workers: 1
+stress_hdd_num_bytes: "1M"
+stress_cpu_num_workers: 2
