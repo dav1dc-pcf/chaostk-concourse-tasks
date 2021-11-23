@@ -69,5 +69,13 @@ params:
   # - Optional
   # - for the stress_* experiments - tune these for more/less system load
 
+  RANDOM_JOB_NAME_ARR: ["router", "diego_cell"]
+  # - Required
+  # - A JSON Array of the ${JOB_NAMES}, of which one will be selected and used
+
+  RANDOM_LIMIT_RANGE: 4
+  # - Required
+  # - The upper bound for a random value for ${LIMIT}, picked between 1 & ${RANDOM_LIMIT_RANGE}
+
 run:
-  path: chaostk-tasks/tasks/run-chaostk-turb/task.sh
+  path: chaostk-tasks/tasks/run-chaostk-turb-rand/task.sh
