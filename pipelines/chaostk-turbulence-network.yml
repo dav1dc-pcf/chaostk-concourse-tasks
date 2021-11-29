@@ -37,5 +37,5 @@ jobs:
       CHAOSTK_CMD_FLAGS: ((chaostk_cmd_flags))
       NET_LOSS_CORR: ((net_loss_corr))
       NET_LOSS: ((net_loss))
-      NET_DELAY_VAR: ((net_loss_var))
+      NET_DELAY_VAR: ((net_delay_var))
       NET_DELAY: ((net_delay))
