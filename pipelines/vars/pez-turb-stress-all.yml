@@ -6,8 +6,8 @@ job_name: "diego_cell"
 limit: "1"
 net_timeout: "5m"
 stress_ram_num_workers: 1
-stress_ram_num_bytes: "50K"
+stress_ram_num_bytes: "15K"
 stress_io_num_workers: 1
 stress_hdd_num_workers: 1
-stress_hdd_num_bytes: "1M"
+stress_hdd_num_bytes: "512K"
 stress_cpu_num_workers: 2
