@@ -61,7 +61,7 @@ params:
   # - for the killprocess_random_job experiment - which monit process do we want to kill?
 
 #  STRESS_RAM_NUM_WORKERS: 1
-  STRESS_RAM_NUM_BYTES: "25K"
+  STRESS_RAM_NUM_BYTES: "10K"
 #  STRESS_IO_NUM_WORKERS: 1
 #  STRESS_HDD_NUM_WORKERS: 1
   STRESS_HDD_NUM_BYTES: "512K"
