@@ -4,10 +4,10 @@ site_to_test: "https://spring-music-surprised-quoll-on.cfapps.haas-459.pez.vmwar
 deployment_name: "cf-5615f893f295dc4e58b0"
 job_name: "diego_cell"
 limit: "1"
-net_timeout: "5m"
+net_timeout: "2m"
 stress_ram_num_workers: 1
 stress_ram_num_bytes: "15K"
 stress_io_num_workers: 1
 stress_hdd_num_workers: 1
-stress_hdd_num_bytes: "512K"
+stress_hdd_num_bytes: "128K"
 stress_cpu_num_workers: 2
