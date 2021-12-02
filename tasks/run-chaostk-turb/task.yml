@@ -5,7 +5,7 @@ image_resource:
   type: docker-image
   source:
     repository: harbor.haas-459.pez.vmware.com/ci/chaostk-tanzu
-    tag: "0.0.4"
+    tag: "0.0.5"
 
 inputs:
 - name: experiments
@@ -60,12 +60,12 @@ params:
   # - Optional
   # - for the killprocess_random_job experiment - which monit process do we want to kill?
 
-#  STRESS_RAM_NUM_WORKERS: 1
+  STRESS_RAM_NUM_WORKERS: 1
   STRESS_RAM_NUM_BYTES: "15K"
-#  STRESS_IO_NUM_WORKERS: 1
-#  STRESS_HDD_NUM_WORKERS: 1
+  STRESS_IO_NUM_WORKERS: 1
+  STRESS_HDD_NUM_WORKERS: 1
   STRESS_HDD_NUM_BYTES: "512K"
-#  STRESS_CPU_NUM_WORKERS: 2
+  STRESS_CPU_NUM_WORKERS: 2
   # - Optional
   # - for the stress_* experiments - tune these for more/less system load
 
